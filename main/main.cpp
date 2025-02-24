@@ -57,7 +57,8 @@ void wifiSetup()
             .threshold = {
                 .rssi = -127, // Default to lowest possible RSSI threshold
                 .authmode = WIFI_AUTH_WPA2_PSK,
-                .rssi_5g_adjustment = 0},
+                //.rssi_5g_adjustment = 0
+            },
             .pmf_cfg = {.capable = true, .required = false},
             .rm_enabled = false,
             .btm_enabled = false,

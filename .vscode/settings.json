@@ -2,6 +2,7 @@
   "C_Cpp.intelliSenseEngine": "default",
   "idf.espIdfPathWin": "C:\\Users\\walter.marchewka\\esp\\v5.3.2\\esp-idf",
   "idf.toolsPathWin": "C:\\Users\\walter.marchewka\\.espressif",
-  "idf.flashType": "JTAG".
-  "idf.flashBaudRate": "921600"
+  "idf.flashType": "UART",
+  "idf.flashBaudRate": "921600",
+  "idf.portWin": "COM6"
 }

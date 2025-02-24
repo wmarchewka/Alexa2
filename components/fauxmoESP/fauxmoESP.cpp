@@ -121,6 +121,14 @@ void FauxmoESP::_setupUDP()
     addr1900.sin_addr.s_addr = htonl(INADDR_ANY);
     bind(udp_socket_legacy, (struct sockaddr *)&addr1900, sizeof(addr1900));
 
+    // Assign multicast TTL (set separately from normal interface TTL)
+    uint8_t ttl = MULTICAST_TTL;
+    setsockopt(udp_socket, IPPROTO_IP, IP_MULTICAST_TTL, &ttl, sizeof(uint8_t));
+    if (err < 0) {
+        ESP_LOGE(V4TAG, "Failed to set IP_MULTICAST_TTL. Error %d", errno);
+        goto err;
+    }
+
     // ✅ Join multicast group on both ports
     struct ip_mreq mreq;
     mreq.imr_multiaddr.s_addr = inet_addr("239.255.255.250");

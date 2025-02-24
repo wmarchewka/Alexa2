@@ -1,0 +1,2 @@
+#define WIFI_SSID "WALTERMARCHEWKA"
+#define WIFI_PASS "Alignment67581"
